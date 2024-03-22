@@ -2,7 +2,7 @@ export type DBType = {
     blogs: any[]
 }
 
-export const db: DBType =  {
+export let db: DBType =  {
     blogs: [
         {
             "id": "string",
