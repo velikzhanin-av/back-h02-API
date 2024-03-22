@@ -9,6 +9,7 @@ import {deleteBlogById} from "../../controllers/blogs/deleteBlogById";
 export const blogsRouter = Router()
 
 blogsRouter.get(SETTINGS.PATH.BLOGS, getAllBlogs)
+blogsRouter.get('/testing/all-data', getAllBlogs)
 blogsRouter.post(SETTINGS.PATH.BLOGS, createBlog)
 blogsRouter.get(SETTINGS.PATH.BLOGS + '/:id' , getBlogById)
 blogsRouter.put(SETTINGS.PATH.BLOGS + '/:id' , updateBlogById)
