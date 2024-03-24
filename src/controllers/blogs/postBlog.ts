@@ -1,4 +1,3 @@
-import {db} from "../../db/db";
 import {createBlog} from "../../repositories/blogs/blogsRepository";
 
 export const postBlog = (req: any, res: any) => {
