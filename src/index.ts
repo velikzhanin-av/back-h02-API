@@ -7,5 +7,5 @@ import {testingRouter} from "./routes/testing/routes";
 app.listen(SETTINGS.PORT, () => {
     console.log(`Server started on port ${SETTINGS.PORT}`)
 })
-app.use(blogsRouter)
-app.use(testingRouter)
+app.use(SETTINGS.PATH.BLOGS, blogsRouter)
+app.use(SETTINGS.PATH.TESTING, testingRouter)

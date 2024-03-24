@@ -4,4 +4,4 @@ import {SETTINGS} from "../../settings";
 
 export const testingRouter = Router()
 
-testingRouter.delete(SETTINGS.PATH.TESTING + '/all-data', deleteDb)
+testingRouter.delete('/all-data', deleteDb)
