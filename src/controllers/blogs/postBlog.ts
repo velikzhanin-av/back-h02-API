@@ -2,9 +2,10 @@ import {createBlog} from "../../repositories/blogs/blogsRepository";
 
 export const postBlog = (req: any, res: any) => {
 
-    createBlog(req.params)
+    const newBlog = createBlog(req.body)
 
     res
-        .sendStatus(200)
+        .status(200)
+        .json(newBlog)
 
 }
