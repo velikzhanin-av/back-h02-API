@@ -4,11 +4,16 @@ import {postBlog} from "../../controllers/blogs/postBlog";
 import {getBlogById} from "../../controllers/blogs/getBlogById";
 import {updateBlogById} from "../../controllers/blogs/updateBlogById";
 import {deleteBlogById} from "../../controllers/blogs/deleteBlogById";
+import {
+    descriptionValidation,
+    nameValidation,
+    postInputValidation, websiteUrlValidation
+} from "../../middlewares/inputValidation";
 
 export const blogsRouter = Router()
 
 blogsRouter.get('/', getAllBlogs)
-blogsRouter.post('/', postBlog)
+blogsRouter.post('/', nameValidation, descriptionValidation, websiteUrlValidation, postInputValidation, postBlog)
 blogsRouter.get('/:id' , getBlogById)
 blogsRouter.put('/:id' , updateBlogById)
 blogsRouter.delete('/:id' , deleteBlogById)
