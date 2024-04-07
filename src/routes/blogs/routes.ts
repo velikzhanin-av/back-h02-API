@@ -19,5 +19,9 @@ blogsRouter.post('/', nameValidation,
     postInputValidation,
     postBlog)
 blogsRouter.get('/:id', getBlogById)
-blogsRouter.put('/:id', updateBlogById)
+blogsRouter.put('/:id', nameValidation,
+    descriptionValidation,
+    websiteUrlValidation,
+    postInputValidation,
+    updateBlogById)
 blogsRouter.delete('/:id', deleteBlogById)

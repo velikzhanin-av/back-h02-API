@@ -16,11 +16,31 @@ export const createBlog = (data:any) => {
         return newBlog
     }
 
-export const findBlogById = (data:any) => {
+export const findBlogById = (id: string) => {
     // const blog = db.blogs.find(item => item.id == data)
     for (let item of db.blogs) {
-        if (item.id === data) {
+        if (item.id === id) {
             return item
         }
     }
+}
+
+export const editBlog = (id: string, body: any) => {
+    const blog = db.blogs.find(item => item.id == id)
+    if (!blog) {
+        return false
+    }
+    for (let key in body) {
+        blog[key] = body[key]
+    }
+        return true
+}
+
+export const deleteBlog = (id: string) => {
+    const blog = db.blogs.find(item => item.id == id)
+    if (!blog) {
+        return false
+    }
+    db.blogs = db.blogs.filter(obj => obj.id !== id)
+    return true
 }

@@ -2,15 +2,18 @@ import {body, validationResult} from 'express-validator'
 import {Request, Response, NextFunction} from "express";
 
 export const websiteUrlValidation = body('websiteUrl')
+    .trim().not().isEmpty()
     .isString()
     .matches('^https://([a-zA-Z0-9_-]+\.)+[a-zA-Z0-9_-]+(\/[a-zA-Z0-9_-]+)*\/?$')
     .isLength({max: 100})
 
 export const nameValidation = body('name')
+    .trim().not().isEmpty()
     .isString()
     .isLength({max: 15})
 
 export const descriptionValidation = body('description')
+    .trim().not().isEmpty()
     .isString()
     .isLength({max: 500})
 
