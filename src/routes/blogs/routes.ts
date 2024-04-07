@@ -13,7 +13,11 @@ import {
 export const blogsRouter = Router()
 
 blogsRouter.get('/', getAllBlogs)
-blogsRouter.post('/', nameValidation, descriptionValidation, websiteUrlValidation, postInputValidation, postBlog)
-blogsRouter.get('/:id' , getBlogById)
-blogsRouter.put('/:id' , updateBlogById)
-blogsRouter.delete('/:id' , deleteBlogById)
+blogsRouter.post('/', nameValidation,
+    descriptionValidation,
+    websiteUrlValidation,
+    postInputValidation,
+    postBlog)
+blogsRouter.get('/:id', getBlogById)
+blogsRouter.put('/:id', updateBlogById)
+blogsRouter.delete('/:id', deleteBlogById)
