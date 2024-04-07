@@ -9,19 +9,22 @@ import {
     nameValidation,
     postInputValidation, websiteUrlValidation
 } from "../../middlewares/inputValidation";
+import {authMiddleware} from "../../middlewares/authMiddleware";
 
 export const blogsRouter = Router()
 
 blogsRouter.get('/', getAllBlogs)
-blogsRouter.post('/', nameValidation,
+blogsRouter.post('/', authMiddleware,
+    nameValidation,
     descriptionValidation,
     websiteUrlValidation,
     postInputValidation,
     postBlog)
 blogsRouter.get('/:id', getBlogById)
-blogsRouter.put('/:id', nameValidation,
+blogsRouter.put('/:id', authMiddleware,
+    nameValidation,
     descriptionValidation,
     websiteUrlValidation,
     postInputValidation,
     updateBlogById)
-blogsRouter.delete('/:id', deleteBlogById)
+blogsRouter.delete('/:id', authMiddleware, deleteBlogById)
