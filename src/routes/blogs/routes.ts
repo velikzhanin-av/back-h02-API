@@ -5,10 +5,11 @@ import {getBlogById} from "../../controllers/blogs/getBlogById";
 import {updateBlogById} from "../../controllers/blogs/updateBlogById";
 import {deleteBlogById} from "../../controllers/blogs/deleteBlogById";
 import {
+    blogsInputValidation,
     descriptionValidation,
     nameValidation,
-    postInputValidation, websiteUrlValidation
-} from "../../middlewares/inputValidation";
+    websiteUrlValidation
+} from "../../middlewares/blogsInputValidation";
 import {authMiddleware} from "../../middlewares/authMiddleware";
 
 export const blogsRouter = Router()
@@ -18,13 +19,13 @@ blogsRouter.post('/', authMiddleware,
     nameValidation,
     descriptionValidation,
     websiteUrlValidation,
-    postInputValidation,
+    blogsInputValidation,
     postBlog)
 blogsRouter.get('/:id', getBlogById)
 blogsRouter.put('/:id', authMiddleware,
     nameValidation,
     descriptionValidation,
     websiteUrlValidation,
-    postInputValidation,
+    blogsInputValidation,
     updateBlogById)
 blogsRouter.delete('/:id', authMiddleware, deleteBlogById)

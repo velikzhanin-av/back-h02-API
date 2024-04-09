@@ -18,8 +18,7 @@ export const descriptionValidation = body('description')
     .isLength({max: 500})
 
 
-
-export const postInputValidation = (req: Request, res: Response, next: NextFunction) => {
+export const blogsInputValidation = (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         res
