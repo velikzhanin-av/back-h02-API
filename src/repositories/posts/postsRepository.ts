@@ -14,6 +14,14 @@ export const createPost = (data:any) => {
             "blogId": data.blogId,
             "blogName": "string"
         }
-    db.blogs.push(newPost)
+    db.posts.push(newPost)
     return newPost
+}
+
+export const findPostById = (id: string) => {
+    for (let item of db.posts) {
+        if (item.id === id) {
+            return item
+        }
+    }
 }
