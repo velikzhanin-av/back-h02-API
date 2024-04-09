@@ -1,7 +1,7 @@
 import {db} from "../../db/db";
 
-export const findAllItems = (items: string) => {
-    return db[items]
+export const findAllBlogs = () => {
+    return db.blogs
 }
 
 export const createBlog = (data:any) => {
