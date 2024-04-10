@@ -25,3 +25,14 @@ export const findPostById = (id: string) => {
         }
     }
 }
+
+export const editPost = (id: string, body: any) => {
+    const post = db.posts.find(item => item.id == id)
+    if (!post) {
+        return false
+    }
+    for (let key in body) {
+        post[key] = body[key]
+    }
+    return true
+}

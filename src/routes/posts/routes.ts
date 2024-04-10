@@ -10,14 +10,23 @@ import {
     shortDescriptionValidation,
     titleValidation
 } from "../../middlewares/postsInputValidation";
+import {putPostById} from "../../controllers/posts/putPostById";
 
 export const postsRouter = Router()
 
 postsRouter.get('/', getAllPosts)
-postsRouter.post('/', shortDescriptionValidation,
+postsRouter.post('/', authMiddleware,
+    shortDescriptionValidation,
     blogIdValidation,
     titleValidation,
     contentValidation,
     postsInputValidation,
     postPost)
 postsRouter.get('/:id', getPostById)
+postsRouter.put('/:id', authMiddleware,
+    shortDescriptionValidation,
+    blogIdValidation,
+    titleValidation,
+    contentValidation,
+    postsInputValidation,
+    putPostById)
