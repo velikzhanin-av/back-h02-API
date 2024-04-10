@@ -12,7 +12,7 @@ export const createPost = (data:any) => {
             "shortDescription": data.shortDescription,
             "content": data.content,
             "blogId": data.blogId,
-            "blogName": "string"
+            "blogName": "ewpfkwkjefkwj"
         }
     db.posts.push(newPost)
     return newPost
