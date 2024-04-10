@@ -8,7 +8,7 @@ export const createPost = (data:any) => {
     const newPost =
         {
             "id": Math.random().toString(36).substring(2) + Math.floor(Math.random() * 100000),
-            "title": data.string,
+            "title": data.title,
             "shortDescription": data.shortDescription,
             "content": data.content,
             "blogId": data.blogId,
