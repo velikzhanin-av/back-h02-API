@@ -4,10 +4,6 @@ export type DBType = {
 }
 
 export let db: DBType =  {
-    blogs: [
-        {}
-    ],
-    posts: [
-        {}
-    ]
+    blogs: [],
+    posts: []
 }
