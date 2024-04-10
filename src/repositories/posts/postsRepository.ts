@@ -36,3 +36,12 @@ export const editPost = (id: string, body: any) => {
     }
     return true
 }
+
+export const deletePost = (id: string) => {
+    const post = db.posts.find(item => item.id == id)
+    if (!post) {
+        return false
+    }
+    db.posts = db.posts.filter(obj => obj.id !== id)
+    return true
+}

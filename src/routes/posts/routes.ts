@@ -11,6 +11,7 @@ import {
     titleValidation
 } from "../../middlewares/postsInputValidation";
 import {putPostById} from "../../controllers/posts/putPostById";
+import {deletePostById} from "../../controllers/posts/deletePostById";
 
 export const postsRouter = Router()
 
@@ -30,3 +31,4 @@ postsRouter.put('/:id', authMiddleware,
     contentValidation,
     postsInputValidation,
     putPostById)
+postsRouter.delete('/:id', authMiddleware, deletePostById)
