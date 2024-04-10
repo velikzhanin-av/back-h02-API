@@ -7,3 +7,5 @@ export let db: DBType =  {
     blogs: [],
     posts: []
 }
+
+// comment
